@@ -2,7 +2,7 @@
     padding: 10% 50% 0% 50%;
 }
 
-.card {
+.hide {
     display: none;
 }
 
@@ -11,5 +11,5 @@
 }
 
 .featured {
-    background-color: red !important;
+    background-color:#e2e9e9 !important;
 }

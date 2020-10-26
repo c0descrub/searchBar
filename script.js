@@ -12,6 +12,14 @@ var resultsCursor = 0
 
 targetInput.focus();
 
+targetInput.addEventListener("keydown", function(event) {
+    if(event.keyCode == "13") {
+        event.preventDefault()
+    }
+})
+
+toggleResults("hide")
+
 targetInput.addEventListener( "keyup", function( event ) {
     results.innerHTML = ""
     toggleResults( "hide" )
@@ -21,6 +29,20 @@ targetInput.addEventListener( "keyup", function( event ) {
             if(matches.length > 0){
                 displayMatches(matches)
             }
+    }
+
+    if(results.classList.contains("visible")) {
+        switch( event.keyCode ) {
+            case 13:
+                targetInput.value = results.children[resultsCursor].innerHTML;
+                toggleResults("hide");
+                resultsCursor = 0;
+                break;
+            case 38:
+                break;
+            case 40:
+                break;
+        }
     }
 })
 
